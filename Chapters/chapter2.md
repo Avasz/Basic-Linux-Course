@@ -14,6 +14,7 @@ By the end of this chapter, you should be able to:
 1. Filesystem is method of storing/finding files on a hard disk. *Icing on top of the cake would be filesystem*
 1. Partitions in Linux is different from partition in windows.  
 	a. They do not have drive letters (C: drive, D: drive) in Linux.
+1. By dividing the hard disk into partitions, data can be grouped and separated as needed. That means, in case of some failures or mistakes, it will affect only a single partition such that the data from another partition will have chance to stay intact.
 --
 
 ###2. Linux Filesystem in detail.
@@ -51,11 +52,7 @@ Depending on distros, there maybe certain changes/difference in the structure of
 After pressing the "Power" button in your system, it goes through a lot of processes before presenting you with a login page. Many background processes run while the Monitor is displaying you with a nice loading screen. The processes that start after pressing the Power button till you login to the system can be called boot process. Boot process can be defined as process of initializing a system. The following image shows a simple flowchart of the boot process.  
 ![Linux Boot Process](https://preview.edge.edx.org/c4x/Linux/LFS101/asset/chapter03_flowchart_scr15_1.jpg)
 
-####3.1 Short explanation of each processes from the previous flowchart.
-
-1. **BIOS**
-Basic Input Output System (BIOS) initializes the hardwares of the system. Hardwares can be screen, input devices, storage devices, memory devices etc. This process is also known as **POST** (Power On Self Test). BIOS is stored in ROM of the motherboard.  
-
-2. **
+Thus, the boot process has multiple steps, starting with BIOS, which triggers the boot loader to startup the Linux Kernel. From there the initramfs filesystem is invoked, which triggers the init program to complete the startup process.
   
- 
+###4. Installing Linux Distribution
+We will be installing a Linux Distribution known as debian. It will be a practical task. 
