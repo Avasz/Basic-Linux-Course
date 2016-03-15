@@ -14,12 +14,12 @@ In Linux system, a functional X server installation is required for any Desktop 
 
 Different Desktop Environments have different Display Managers (DMs). The default display manager for GNOME is called gdm, similarly KDM is for KDE. Also their are Display Managers like lightdm which can be used with any Desktop Environment easily.
 
-**Practical:**  *(Session Managements)*
-1. Loggin in and Logging out of the system. *(Logging out of your current desktop environment kills all processes in your current X session, always save before logging out.)*
-2. Locking screen
-3. Switching users
-4. Shutting Down & Restarting
-5. Suspending Session
+**Practical:**  *(Session Managements)*  
+1. Loggin in and Logging out of the system. *(Logging out of your current desktop environment kills all processes in your current X session, always save before logging out.)*  
+2. Locking screen  
+3. Switching users  
+4. Shutting Down & Restarting  
+5. Suspending Session  
 
 ###3.2 Basic Operations & Navigating Around
 1. Going through Menu & Submenus
