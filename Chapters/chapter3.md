@@ -21,7 +21,7 @@ Different Desktop Environments have different Display Managers (DMs). The defaul
 4. Shutting Down & Restarting  
 5. Suspending Session  
 
-###3.2 Basic Operations & Navigating Around
+###3.2 Basic Operations & Navigating Around *(Practical)*
 1. Going through Menu & Submenus
 1. Knowing default applications
 1. Default applications: Text editing, Video Player, Internet Browsing, Office etc.
