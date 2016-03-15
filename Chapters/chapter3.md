@@ -30,4 +30,15 @@ Different Desktop Environments have different Display Managers (DMs). The defaul
 1. Background, Screensaver, Themes, Icons etc.
 
 
+###3.3 Changing System Configurations from Graphical Interface *(Practical)*
+1. System Settings menu.
+1. Varios settings: Display, Date & Time etc.
+1. Connecting to a Network, (Wired and Wireless)
+1. Configuring network manually if required.
+1. Conecting to Mobile Broadband
 
+###3.4 Installing, Removing & Updating Applications *(Theory + Practical)*
+1. About packages......................
+1. Software centres....................
+
+1. 
