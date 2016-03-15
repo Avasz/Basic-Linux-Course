@@ -19,7 +19,7 @@ By the end of this chapter, you should be able to:
 ###2. Linux Filesystem in detail.
 In Linux systems, files are stored in a standard layout called the Filesystem Hierarchy Standard (FHS). Linux uses '/' (Forward slash character) to separate paths. As mentioned earlier, Linux doesn't have drive letters as in windows. Linux filesystem is case sensitive, for eg: /home is different from /Home, /HOme, /HOME. In fact, all of them are different from one another.  
 '/' represents the root of the Linux file systems. Root as in the topmost folder, not Root user. All other folders are organized in heirarchical way inside the '/'. For convinience, Linux file system is usually thought of in a tree structure. A general linux file system layout is shown below:  
-![File system tree](./../../Images/Chapter2/filesystem_tree.jpg)    
+![File system tree](https://raw.githubusercontent.com/Avasz/Basic-Linux-Course/master/Images/Chapter2/filesystem_tree.jpg)    
 Depending on distros, there maybe certain changes/difference in the structure of the file system. Some directories may be omitted or be added as per requirement.  
 
 1. The file system tree starts with a '/'. This contans all other directories and files. This is known as *root directory* or *the root* of the file system.  
