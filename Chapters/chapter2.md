@@ -16,7 +16,7 @@ By the end of this chapter, you should be able to:
 	a. They do not have drive letters (C: drive, D: drive) in Linux.
 1. By dividing the hard disk into partitions, data can be grouped and separated as needed. That means, in case of some failures or mistakes, it will affect only a single partition such that the data from another partition will have chance to stay intact.
 
-__
+______
 
 ###2. Linux Filesystem in detail.
 In Linux systems, files are stored in a standard layout called the Filesystem Hierarchy Standard (FHS). Linux uses '/' (Forward slash character) to separate paths. As mentioned earlier, Linux doesn't have drive letters as in windows. Linux filesystem is case sensitive, for eg: /home is different from /Home, /HOme, /HOME. In fact, all of them are different from one another.  
@@ -47,7 +47,7 @@ Depending on distros, there maybe certain changes/difference in the structure of
 | /usr | Contains all system-wide, read-only files installed by (or provided by) the OS. |
 | /var | Storage for all variable and temporary files created by users. Eg. Log files, email queue etc. |
 
-__
+______
 
 ###3. Linux boot process.
 After pressing the "Power" button in your system, it goes through a lot of processes before presenting you with a login page. Many background processes run while the Monitor is displaying you with a nice loading screen. The processes that start after pressing the Power button till you login to the system can be called boot process. Boot process can be defined as process of initializing a system. The following image shows a simple flowchart of the boot process.  
