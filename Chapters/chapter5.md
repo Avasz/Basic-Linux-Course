@@ -292,8 +292,8 @@ Files can be searched using different methods. Here we will check two methods of
 
 1. **Using the `less` command.**  
 Open the `cpuinfo` file using `less`. Think of a string to be searched, we will search for the word **Genuine**.
-
-2. **Using the `grep` command**
+  
+2. **Using the `grep` command**  
 First thing, by default `grep` is case sensitive.  
 Syntax:  
 `grep STRING FILENAME`  
@@ -304,6 +304,45 @@ Eg:
 To ignore the case sensitivity, you can use `-i` option.  
 Example:  
 `grep -i genuine /proc/cpuinfo`
+
+
+####5.2.10 Finding files in the system - find
+The `find` command in Linux can be used to find files from the command line. It has many features and options. But we will go through only the basic and useful ones. More advanced use of `find` command can be finding files with various criterias such as permissions, user ownerships, modifications, size etc.  
+Basic Syntax of `find` command:  
+`find location criteria search-termn`  
+
+The `find` command without any arguements will list out all the files in the current directories as well as the subdirectories in the current directory.
+#####5.2.10.1 Searching for files in current directory
+Let us change to the folder `/usr/share/`. If you list files in that directory with `ls` command you will see lots of files and folders there. To search manually in this folder would be a really difficult task. Let us find something called `icon`. The command would be:  
+`find . -name icon` or `find . -name "icon"`  
+
+* Suppose we need to find files with `.png` extensions only. We can use wildcards too. Example:  
+`find . -name "*.png"`  
+
+* Suppose we are not sure if the file name has uppercase or lowercase. We can ignore the case using `-iname` option. Example:  
+`find . -iname "*.PNG"`  
+
+#####5.2.10.2 Searching for files in another directory different than current directory
+All we need to do is give the absolute path. Let us move to our `home` directory and search for the same files as in previous section.  
+Examples:  
+`find /usr/share/ -name icon`  
+`find /usr/share/ -name "*.png"`
+
+#####5.2.10.3 Finding and deleting the files
+1. To find and remove a single file, let us create a file called `remove.txt` in our home directory. The command would be  
+`find . -name "remove.txt" -exec rm -f {} \;`
+
+2. To find and remove multiple files, let us create a few files named `file1.txt`, `file2.txt`, `file3.txt` and `file4.txt`. The command would be  
+`find . -name "*.txt" -exec rm -f {} \;` 
+
+#####5.2.10.4 Finding files of specific size
+* Files greater than 50MB  
+`find . -size 50M`
+
+* Finding and deleting files of 50MB
+`find . -size 50M -exec rm -rf {} \;`
+
+
 
 
 
