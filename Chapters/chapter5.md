@@ -55,15 +55,9 @@ Generally, each command entered in command line has three basic elements:
 ###5.2 Basic commands
 
 1. whoami  
-2. pwd  
-3. cd  
-4. mkdir  
-4. ls
 5. cat  
 6. echo  
 7. rmdir
-8. cp
-9. mv
 10. reboot
 11. poweroff, halt
 12. which
@@ -86,7 +80,7 @@ Generally, each command entered in command line has three basic elements:
 29. sed
 30. history
 
-####1. Listing Files and Folders - ls
+####5.2.1. Listing Files and Folders - ls
 ls command is used for listing the files and directories. Just typing the **ls** command in your prompt will display the files and directories in your current folder. You can type full path of the folder you want to view.
 eg:
 ```
@@ -116,20 +110,19 @@ drwxr-xr-x 3 avasz avasz 4096 Mar 18 11:11 Public
 
 * Do it yourself: combine the options l & a in same command and find the difference.
 
-####2. Making Directories - mkdir
+####5.2.2. Making Directories - mkdir
 **mkdir** command is used to make directories. 
 Syntax:  
 ```mkdir [OPTIONS]... DIRECTORY...
 ```
 
-**Example:**  
-```
-user@debian:~$ mkdir New_Directory
+**Example:**
+```user@debian:~$ mkdir New_Directory
 ```
 After that you can test if the new directory has been created or not by using the **ls** command we learnt earlier.  
 
-One important option that can be used with **mkdir** is the **-p** option. Generally, if you want to create subdirectories in a directory that doesn't exist then **mkdir** will return an error. But if you use **-p** option, then it will create the parent directories as necessary. Example:
-```
+One important option that can be used with **mkdir** is the **-p** option. Generally, if you want to create subdirectories in a directory that doesn't exist then **mkdir** will return an error. But if you use **-p** option, then it will create the parent directories as necessary. Example:  
+```shell
 user@debian:~$ ls
 . .. Documents Downloads Music Public
 
@@ -147,18 +140,121 @@ user@debian:~$ ls Videos
 Songs
 
 user@debian:~$ ls Videos/Songs
-English
+English  
 ```
 
+####5.2.3 Changing direcotries - cd
+The **cd** command can change the direcotry. By default if you do not supply any arguements and just enter **cd**, it will take you to the home directory of the current user.
+You can use the **absolute path** or the **relative path** while using **cd** command. Some examples of using the **cd** commands are shown below.
 
+* cd ..  
+	This command will take you to the parent directory of the current directory. eg:
+```shell
+user@debian:~/Videos/Songs$ pwd
+/home/user/Videos/Songs
 
+user@debian:~/Videos/Songs$ cd ..
+user@debian:~/Videos$ pwd
+/home/user/Videos
+```
 
+* cd /
+This command will take you to the root directory of the file system.
 
+* cd /absolute/path/to/directory
+This command will take you to the directory you have specified with full path.
+eg:
+```shell
+user@debian:~$ cd /usr/share/bin/
+user@debian:/usr/share/bin$ pwd
+/usr/share/bin
+```
+* cd relative/path/to/directory
+This command will take you the the directories with relative path from the current directory. Perform the following task as normal user.  
 
+> 1.  `cd` 
+> 2. `mkdir -p new_folder/sub_folder/last_folder`
+> 3. `cd new_folder/sub_folder/last_folder` 
+> 4. Check your present directory with `pwd`
+> 5. If you did everything correctly then you should be in the `last_folder`
+> 6. Now, suppose you need to get to the `new_folder` from your current directory. You have two options, either give the full path as `/home/you_user_name/new_folder`, or you can use relative path as `../.../`
+> 7. Finally, create another folder inside the `new_folder` named `sub_folder2` and inside that another folder called `tired_of_creating_folders`. `cd` to the `tired_of_creating_folders`, and from here get to the `last_folder` using relative path.
 
+* cd ~
+This command will always take you to the home directory of the user you are currently logged in as no matter where you are.
 
+####5.2.4 Checking present working directory - pwd
+The `pwd` command will show you your present working directory. Try it in your prompt.
 
+####5.2.5 Creating an empty file - touch
+The `touch` command creates a file to the path you specified. In case you did not specify any path, it will create in your **present working directory**.
 
+Syntax:  
+`touch filename` or `touch /path/to/the/file/filename`  
 
+Example:
+```bash
+user@debian:~$ touch file1
+user@debian:~$ touch new_folder/file2
+```
+
+**You can check if the files have been created or not using the `ls` command if you wish**
+
+####5.2.6 Copying and Moving files - cp & mv
+We have learnt about relative and absolute paths in the previous section so we will be using them where possible. Also, we will be working on the two files we created in the previous secions, `file1` and `file2`.    
+
+#####5.2.6.1 cp
+The `cp` command is used to copy a file or a folder from one place to another. Syntax:
+`cp Source Destination`  
+Example:
+```bash
+user@debian:~$ cp file1 new_folder/
+user@debian:~$ ls new_folder/
+file1 file2 sub_folder
+```
+
+You can also copy the file inside the same folder, for that you do not need to mention the full path.
+
+**Try it yourself:**  
+Copy the file named `file2` to the `last_folder` staying in your home directory.
+
+Now, we will check copying the folders.  
+> 1. Change your `pwd` to your home directory.
+> 2. Create a new directory named copy_folder.
+> 3. Try to copy the `new_folder` to `copy_folder` in similar way.
+> 4. What does it say?
+> 5. It is because the directory is not empty, you need to use recursive option to copy the directories from one place to another. Try it with the **-r** flag. i.e. `cp -r 'new_folder` `copy_folder`.
+> 6. Also, don't forget to check if it succeeded or not.
+
+#####5.2.6.2 mv
+The `mv` command has two uses. They are:  
+1. Moving files and folders from one place to another  
+2. Renaming the files and folders. It is basically moving the files and folders to the same place with different name. Will be clear after we do try it.
+
+Syntax for `mv` command is similar to that of `cp` command.  
+`mv SOURCE DESTINATION`  
+
+Example:  
+```shell
+user@debian:~$ cd
+user@debian:~$ mv file1 new_folder/sub_folder/last_folder
+```
+
+Now if you check the files in home folder with `ls`, you will see that it has been moved.
+
+Example of renaming using mv:  
+Suppose, the current `new_folder` is not new anymore and you want to rename it to `old_folder`. Command: `mv new_folder old_folder`. List the directories to check the effect.
+
+####5.2.7 Deleting files and directories - rm & rmdir
+
+1. Change your working directory to the `last_folder`.
+2. List the files there. You see there is a file named `file1` that we moved from home directory to this directory in previous section.
+3. Delete this file. `rm file1`
+4. Check for confirmation.  
+5. Next come back to the home directory and delete the `old_folder`. `rm old_folder`. Doesn't work. `rmdir old_folder`. Doesn't work. Reason, the folder is not empty. Change to `old_folder` and delete everything inside it...
+...
+...
+...
+..
 
 
