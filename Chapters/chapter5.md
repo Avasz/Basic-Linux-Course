@@ -86,7 +86,7 @@ Generally, each command entered in command line has three basic elements:
 29. sed
 30. history
 
-####1. **ls**
+####1. Listing Files and Folders - ls
 ls command is used for listing the files and directories. Just typing the **ls** command in your prompt will display the files and directories in your current folder. You can type full path of the folder you want to view.
 eg:
 ```
@@ -105,9 +105,52 @@ user@debian:~$ ls -a
 
 * ls -l  
 	This displays long list
+```
+user@debian:~$ ls -l
+total 16
+drwxr-xr-x 2 avasz avasz 4096 Mar 18 11:11 Documents
+drwxr-xr-x 3 avasz avasz 4096 Mar 18 11:11 Downloads
+drwxr-xr-x 2 avasz avasz 4096 Mar 18 11:11 Music
+drwxr-xr-x 3 avasz avasz 4096 Mar 18 11:11 Public
+```
+
+* Do it yourself: combine the options l & a in same command and find the difference.
+
+####2. Making Directories - mkdir
+**mkdir** command is used to make directories. 
+Syntax:  
+```mkdir [OPTIONS]... DIRECTORY...
+```
+
+**Example:**  
+```
+user@debian:~$ mkdir New_Directory
+```
+After that you can test if the new directory has been created or not by using the **ls** command we learnt earlier.  
+
+One important option that can be used with **mkdir** is the **-p** option. Generally, if you want to create subdirectories in a directory that doesn't exist then **mkdir** will return an error. But if you use **-p** option, then it will create the parent directories as necessary. Example:
+```
+user@debian:~$ ls
+. .. Documents Downloads Music Public
+
+user@debian:~$ mkdir Videos/Songs/English
+mkdir: cannot create directory ‘Videos/Songs/English’: No such file or directory
+
+user@debian:~$ mkdir -p Videos/Songs/English
+
+user@debian:~$ 
+
+user@debian:~$ ls
+. .. Documents Downloads Music Public Videos
+
+user@debian:~$ ls Videos
+Songs
+
+user@debian:~$ ls Videos/Songs
+English
+```
 
 
-**Understand absolute and relative pathnames**
 
 
 
