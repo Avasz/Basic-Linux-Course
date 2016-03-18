@@ -54,24 +54,8 @@ Generally, each command entered in command line has three basic elements:
 
 ###5.2 Basic commands
 
-1. whoami  
-6. echo  
-10. reboot
-11. poweroff, halt
-12. which
-13. whereis
-14. symlink
-15. I/O redirection "< & >"
-16. Pipes
-17. locate (updatedb)
-18. find
-19. wildcards
-25. dpkg, apt-get, apt-cache
-26. ifconfig
-27. iwconfig
-29. sed
-30. history
-
+Let us start by knowing who you are. Run  `whoami` in the prompt to know who you are right now.   
+ 
 ####5.2.1. Listing Files and Folders - ls
 ls command is used for listing the files and directories. Just typing the **ls** command in your prompt will display the files and directories in your current folder. You can type full path of the folder you want to view.
 eg:
@@ -343,6 +327,24 @@ Examples:
 `find . -size 50M -exec rm -rf {} \;`
 
 
+####5.2.11 Locating executable files associated with given command - which
+`which filename`
+
+####5.2.12 Locating files associated with given command - whereis
+Similar to `which` but it locates the binary, source, documentation and manual pages of the command.
+Example:  
+`whereis ls`  
+
+####5.2.13 Symlinking files - ln
+`ln` is a command which makes symlinks of a file, folder from a given path to another path.
+
+####5.2.14 I/O redirections - "<" & ">"
+####5.2.15 pipe 
+####5.2.16 ifconfig, iwconfig 
+####5.2.17 history
+####5.2.18 sed
+####5.2.19 whoami
+####5.2.17 poweroff, reboot
 
 
 
