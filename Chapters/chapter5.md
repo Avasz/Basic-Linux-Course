@@ -55,9 +55,7 @@ Generally, each command entered in command line has three basic elements:
 ###5.2 Basic commands
 
 1. whoami  
-5. cat  
 6. echo  
-7. rmdir
 10. reboot
 11. poweroff, halt
 12. which
@@ -68,15 +66,9 @@ Generally, each command entered in command line has three basic elements:
 17. locate (updatedb)
 18. find
 19. wildcards
-20. less
-21. tail
-22. head
-23. touch
-24. rm , rm -i, rm -f
 25. dpkg, apt-get, apt-cache
 26. ifconfig
 27. iwconfig
-28. grep
 29. sed
 30. history
 
@@ -259,5 +251,59 @@ Suppose, the current `new_folder` is not new anymore and you want to rename it t
 ...
 ...
 ..
+
+####5.2.8 Displaying the contest of a file in screen
+
+#####5.2.8.1 Clear screen
+Command: `clear`
+Shortcut: Ctrl+l
+
+#####5.2.8.2 cat
+The `cat` command is used to display the content of a file on the screen.
+```shell
+user@debian:~$ cat /proc/cpuinfo
+```
+
+#####5.2.8.3 less
+`less` command is used to display the content of the file onto the screen a page at a time.
+```shell
+user@debian:~$ less /proc/cpuinfo
+```
+
+#####5.2.8.4 head
+By default the `head` command writes the first ten lines of a file to the screen. You can specify the number of lines you want to display by passing the number as an option. Eg:  
+```shell
+user@debian:~$ head /proc/cpuinfo
+user@debian:~$ head -5 /proc/cpuinfo
+```
+
+#####5.2.8.5 tail
+By default the `tail` command prints the last ten lines of a file to the screen. You can specify the number of the lines you want to disply by passing the number as an option. Eg:
+
+```shell
+user@debian:~$ tail /proc/cpuinfo
+user@debian:~$ tail -15 /proc/cpuinfo
+```
+
+`tail` can also be used to follow the changes in a file. Specially useful while following a logfile in live mode.
+
+####5.2.9 Searching the contents of a file
+Files can be searched using different methods. Here we will check two methods of searching the content of a file.  
+
+1. **Using the `less` command.**  
+Open the `cpuinfo` file using `less`. Think of a string to be searched, we will search for the word **Genuine**.
+
+2. **Using the `grep` command**
+First thing, by default `grep` is case sensitive.  
+Syntax:  
+`grep STRING FILENAME`  
+
+Eg:  
+`grep Genuine /proc/cpuinfo`  
+
+To ignore the case sensitivity, you can use `-i` option.  
+Example:  
+`grep -i genuine /proc/cpuinfo`
+
 
 
