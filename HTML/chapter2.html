@@ -1,0 +1,106 @@
+<h1 id="chapter-2">Chapter 2</h1>
+<h2 id="linux-structure-and-installation">Linux Structure and Installation</h2>
+<p>By the end of this chapter, you should be able to:<br />
+* Identify Linux Filesystems. * Identify the difference between partition and filesystems. * Describe boot process * Know how to install Linux distribution on a computer (Practical)</p>
+<h3 id="linux-filesystems-and-partitions">1. Linux Filesystems and Partitions</h3>
+<ul>
+<li><strong>First of all, think of a disk as a cake</strong></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Partition is a logical part of the disk. <em>A slice of a cake would be a partition</em></li>
+<li>Filesystem is method of storing/finding files on a hard disk. <em>Icing on top of the cake would be filesystem</em></li>
+<li>Partitions in Linux is different from partition in windows.
+<ol style="list-style-type: lower-alpha">
+<li>They do not have drive letters (C: drive, D: drive) in Linux.</li>
+</ol></li>
+<li>By dividing the hard disk into partitions, data can be grouped and separated as needed. That means, in case of some failures or mistakes, it will affect only a single partition such that the data from another partition will have chance to stay intact.</li>
+</ol>
+<hr />
+<h3 id="linux-filesystem-in-detail.">2. Linux Filesystem in detail.</h3>
+<p>In Linux systems, files are stored in a standard layout called the Filesystem Hierarchy Standard (FHS). Linux uses '/' (Forward slash character) to separate paths. As mentioned earlier, Linux doesn't have drive letters as in windows. Linux filesystem is case sensitive, for eg: /home is different from /Home, /HOme, /HOME. In fact, all of them are different from one another.<br />
+'/' represents the root of the Linux file systems. Root as in the topmost folder, not Root user. All other folders are organized in heirarchical way inside the '/'. For convinience, Linux file system is usually thought of in a tree structure. A general linux file system layout is shown below:<br />
+<img src="https://raw.githubusercontent.com/Avasz/Basic-Linux-Course/master/Images/Chapter2/filesystem_tree.jpg" alt="File system tree" /><br />
+Depending on distros, there maybe certain changes/difference in the structure of the file system. Some directories may be omitted or be added as per requirement.</p>
+<ol style="list-style-type: decimal">
+<li>The file system tree starts with a '/'. This contans all other directories and files. This is known as <em>root directory</em> or <em>the root</em> of the file system.<br />
+</li>
+<li>Directories one level below the root directory are preceded by a slash to indicate their position. eg: /etc, /boot, /tmp.</li>
+</ol>
+<h4 id="explanation-of-subdirectories-of-the-root-directory">2.1 Explanation of Subdirectories of the Root Directory</h4>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Directory</th>
+<th align="left">Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">/bin</td>
+<td align="left">Contains common programs, shared by the system, system administrator and the users.</td>
+</tr>
+<tr class="even">
+<td align="left">/boot</td>
+<td align="left">Contains the startup files and the kernel that is required by an operating system while booting.</td>
+</tr>
+<tr class="odd">
+<td align="left">/dev</td>
+<td align="left">Contains reference to all hardwares in the system. They are represented as files.</td>
+</tr>
+<tr class="even">
+<td align="left">/etc</td>
+<td align="left">System configuration files are stored in /etc. This directory contains data similar to those in Control Panel in Windows.</td>
+</tr>
+<tr class="odd">
+<td align="left">/home</td>
+<td align="left">Home directory of common users in the system</td>
+</tr>
+<tr class="even">
+<td align="left">/lib</td>
+<td align="left">Contains library files that are required by programs and users.</td>
+</tr>
+<tr class="odd">
+<td align="left">/lost+found</td>
+<td align="left">Every partition contains a lost+found in its root directory. Files saved during failures will be here.</td>
+</tr>
+<tr class="even">
+<td align="left">/mnt</td>
+<td align="left">This is standard mount point for external devices such as DVD-ROM, Camera etc.</td>
+</tr>
+<tr class="odd">
+<td align="left">/opt</td>
+<td align="left">Generally contains third party softwares. eg: Viber</td>
+</tr>
+<tr class="even">
+<td align="left">/proc</td>
+<td align="left">Contains information about all system processes. This is a pseudo file system. Eg. It contains information of CPU, Memory etc. in files cpuinfo and meminfo respectively.</td>
+</tr>
+<tr class="odd">
+<td align="left">/root</td>
+<td align="left">This is the home directory of Root user.</td>
+</tr>
+<tr class="even">
+<td align="left">/sbin</td>
+<td align="left">Contains programs used by the system and system administrator.</td>
+</tr>
+<tr class="odd">
+<td align="left">/tmp</td>
+<td align="left">Temporary space used by system. The files on this directory will be cleaned upon reboot.</td>
+</tr>
+<tr class="even">
+<td align="left">/usr</td>
+<td align="left">Contains all system-wide, read-only files installed by (or provided by) the OS.</td>
+</tr>
+<tr class="odd">
+<td align="left">/var</td>
+<td align="left">Storage for all variable and temporary files created by users. Eg. Log files, email queue etc.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="linux-boot-process.">3. Linux boot process.</h3>
+<p>After pressing the &quot;Power&quot; button in your system, it goes through a lot of processes before presenting you with a login page. Many background processes run while the Monitor is displaying you with a nice loading screen. The processes that start after pressing the Power button till you login to the system can be called boot process. Boot process can be defined as process of initializing a system. The following image shows a simple flowchart of the boot process.<br />
+<img src="https://preview.edge.edx.org/c4x/Linux/LFS101/asset/chapter03_flowchart_scr15_1.jpg" alt="Linux Boot Process" /></p>
+<p>Thus, the boot process has multiple steps, starting with BIOS, which triggers the boot loader to startup the Linux Kernel. From there the initramfs filesystem is invoked, which triggers the init program to complete the startup process.</p>
+<h3 id="installing-linux-distribution">4. Installing Linux Distribution</h3>
+<p>We will be installing a Linux Distribution known as debian. It will be a practical task.</p>
