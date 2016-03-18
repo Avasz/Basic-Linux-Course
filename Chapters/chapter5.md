@@ -24,7 +24,7 @@ Next: Start a terminal window in your Operating System.
 After starting the terminal you will be greeted by a prompt. eg:  
 ```shell
 bishnu@debian:~/Documents$ _ 
-root@debian:~/usr/share# _
+root@debian:/usr/share# _
 ```
 
 
