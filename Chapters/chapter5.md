@@ -36,7 +36,7 @@ For explaining the prompt we will separate each section of the prompt into diffe
 5. The space after this is the place for us to enter commands.  
 
 If you want to operate only in Command Line and turn of the graphical desktop environment, then you can issue either of these commands:  
-1. sudo systemctl stop gdm (For GNOOME)  
+1. sudo systemctl stop gdm (For GNOME)  
 2. sudo systemctl stop lightdm  
 3. sudo killall -9 Xorg  
 4. etc. etc.
