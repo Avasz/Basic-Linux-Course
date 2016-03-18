@@ -22,7 +22,7 @@ Next: Start a terminal window in your Operating System.
 
 ###5.1 The Command Line
 After starting the terminal you will be greeted by a prompt. eg:  
-```
+```shell
 bishnu@debian:~/Documents$ _ 
 root@debian:~/usr/share# _
 ```
@@ -83,7 +83,7 @@ Generally, each command entered in command line has three basic elements:
 ####5.2.1. Listing Files and Folders - ls
 ls command is used for listing the files and directories. Just typing the **ls** command in your prompt will display the files and directories in your current folder. You can type full path of the folder you want to view.
 eg:
-```
+```shell
 user@debian:~$ ls
 Documents	Downloads	Music	Public
 ```
@@ -92,14 +92,14 @@ Some useful options of **ls** command:
 * ls -a    
 	This displays all the files and directories, even the hidden ones.
 eg:
-```
+```shell
 user@debian:~$ ls -a
 . .. .config .fonts Documents Downloads Music Public
 ```
 
 * ls -l  
 	This displays long list
-```
+```shell
 user@debian:~$ ls -l
 total 16
 drwxr-xr-x 2 avasz avasz 4096 Mar 18 11:11 Documents
@@ -113,11 +113,14 @@ drwxr-xr-x 3 avasz avasz 4096 Mar 18 11:11 Public
 ####5.2.2. Making Directories - mkdir
 **mkdir** command is used to make directories. 
 Syntax:  
-```mkdir [OPTIONS]... DIRECTORY...
+```shell
+mkdir [OPTIONS]... DIRECTORY...
 ```
 
 **Example:**
-```user@debian:~$ mkdir New_Directory
+
+```shell
+user@debian:~$ mkdir New_Directory
 ```
 After that you can test if the new directory has been created or not by using the **ls** command we learnt earlier.  
 
