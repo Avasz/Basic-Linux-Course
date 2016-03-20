@@ -363,12 +363,59 @@ Uses:
 Symbolik links have lots of uses. For example, suppose you have a large file that also needs to be in another folder. If you copy that file, it can be a waste of space, so instead of copying the whole file you can just link that file to another folder where it is required. Another example is, there may be a dualboot system and each has its own browser, text editors etc. So instead of setting up and configuring the browsers in each system, the profiles and configurations can just be symlinked to the required folder of another operating system.
 
 ####5.2.14 I/O redirections - "<" & ">"
+I/O redirection (Input Output Redirection) is a powerful feature used by various commands. The default I/O system are generally Keyboards & Mouse and Display. We have seen various commands print out their output to the display. We can change this behaviour by redirecting the output or many commands to files as well as make the commands take input from different source.  
+
+#####5.2.14.1 Output Redirection - >
+Example:  
+`user@debian:~$ ls > contents`  
+
+This command redirected the output of the command `ls` to a file called `files.txt`. Generally sing `>` operator overwrites the file. But if you want the contents of the files to be preserved but the new stuffs be appended in the existing contents you need to use the `>>`.  
+Example:  
+`user@debian:~$ date >> contents`  
+
+This will append the current time and date to the existing file named as `contents`.
+
+#####5.2.14.2 Input Redirection - <
+Example:  
+```shell
+user@debian:~$ wc -l contents
+user@debian:~$ wc -l < contents
+```
+####5.2.14.3 Combining Input Redirection & Output Redirections
+Example:   
+`user@debian:~$ wc -c < contents > characters`
+ 
 ####5.2.15 pipe 
+I/O Redirections was to send data to and from the files. Pipe `|` is a method of sending output from one command as input to another command. It is useful for joining lots of small easy commands to perform a large and complex task. Let us take example that we need to find the first 2 files in our folder.  
+`user@debian:~$ ls | head -2`  
+
+Another example:  
+We need to find the number of folders in our current directory.  
+`user@debian:~$ ls -d */ | wc -l`  
+
+Find the fifth file in a directory:  
+`user@debian:~$ ls | head -5 | tail -1`
+
+
 ####5.2.16 ifconfig, iwconfig 
+The command `ifconfig` is used to configure a network interface in linux. This command without any arguements will show the currently detected network interfaces in your system. 
+
+
 ####5.2.17 history
+The `history` command is used to view the history of all the commands that has been entered by the current user in the terminal.  
+
+**Task:**  
+* Find the 100th command you entered.  
+* Save all the `cd` commands you used to a file named cd_history.
+
+
+
 ####5.2.18 sed
+`sed` is a stream editor. It is useful for editing and filtering the texts from various input streams (files, keystroke, output of another command etc.). Mastering `sed` can be equivalent to mastering a small programming language. Some simple, useful and basic uses of sed are as given below. We can write scripts or programs that will make changes in a file automatically using sed. 
+
 ####5.2.19 whoami
-####5.2.17 poweroff, reboot
+`whoami`
+
 
 
 
