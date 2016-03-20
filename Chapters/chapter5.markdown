@@ -320,15 +320,31 @@ Examples:
 `find . -name "*.txt" -exec rm -f {} \;` 
 
 #####5.2.10.4 Finding files of specific size
-* Files greater than 50MB  
+* Files of size 50MB  
 `find . -size 50M`
 
 * Finding and deleting files of 50MB
 `find . -size 50M -exec rm -rf {} \;`
 
+* Finding files of size greater than 50MB
+`find . -size +50M`
+
+* Finding files of size less than 50MB
+`find . -size -50M`
+
+* Finding file sof size in between 50MB and 100MB
+`find . -size +50M -size -100M`
+
+*Can append the `-exec` on these as required.*   
+***Note:** There are lots of other options that can come with find, such as finding files of specific permissions, made by specific user,, made on certain dates, file types etc.*
+
+
 
 ####5.2.11 Locating executable files associated with given command - which
-`which filename`
+`which filename`    
+Example:  
+`which ls`  
+
 
 ####5.2.12 Locating files associated with given command - whereis
 Similar to `which` but it locates the binary, source, documentation and manual pages of the command.
@@ -336,7 +352,15 @@ Example:
 `whereis ls`  
 
 ####5.2.13 Symlinking files - ln
-`ln` is a command which makes symlinks of a file, folder from a given path to another path.
+`ln` is a command which makes symlinks (Symbolic Links) of a file, folder from a given path to another path.  
+Syntax:  
+`ln -s SOURCE TARGET`
+
+Example:  
+`ln -s /usr/share/ ~/share`  
+
+Uses:  
+Symbolik links have lots of uses. For example, suppose you have a large file that also needs to be in another folder. If you copy that file, it can be a waste of space, so instead of copying the whole file you can just link that file to another folder where it is required. Another example is, there may be a dualboot system and each has its own browser, text editors etc. So instead of setting up and configuring the browsers in each system, the profiles and configurations can just be symlinked to the required folder of another operating system.
 
 ####5.2.14 I/O redirections - "<" & ">"
 ####5.2.15 pipe 
