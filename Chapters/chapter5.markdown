@@ -413,6 +413,16 @@ The `history` command is used to view the history of all the commands that has b
 ####5.2.18 sed
 `sed` is a stream editor. It is useful for editing and filtering the texts from various input streams (files, keystroke, output of another command etc.). Mastering `sed` can be equivalent to mastering a small programming language. Some simple, useful and basic uses of sed are as given below. We can write scripts or programs that will make changes in a file automatically using sed. 
 
+```shell
+sed -i "s/..../..../g" filename
+sed -i "s/.../..../1" filename
+sed -i "s/.../..../3g" filename
+sed -i "3s/.../..../" filename
+
+sed -e "s/.../..../g" -e "s/.../..../g" < filename > filename
+sed -e "s.../..../g" -e "s/.../..../g" < filename > newfilename
+```
+
 ####5.2.19 whoami
 `whoami`
 
